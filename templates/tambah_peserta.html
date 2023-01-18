@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Pendaftar</title>
+    <link href="{{url_for('static', filename='bootstrap.min.css')}}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
+                <h1 style="text-align:center">Tambah Peserta</h1>
+                <form action="/tambah_peserta/save" method="post">
+                    <div class="form-group" >
+                
+
+                        <label for="">Nama</label>
+                        <input type="text" name="nama" id="" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Alamat</label>
+                        <input type="text" name="alamat" id="" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Gender</label>
+                        <input type="text" name="gender" id="" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Umur</label>
+                        <input type="text" name="umur" id="" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <a href="/list_pendaftaran" class="btn btn-warning">cancel</a>
+                        <button class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+
+    <script src="{{url_for('static', filename='bootstrap.min.js')}}" rel="stylesheet"></script>
+</body>
+</html>

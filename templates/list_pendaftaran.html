@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>List Pendaftar</title>
+        <link href="{{url_for('static', filename='bootstrap.min.css')}}" rel="stylesheet">
+    
+    
+  </head>
+  <body>
+    <h1>{{lp}}</h1>
+    <p>Tanggal {{tgl}}</p>
+    <table class="table">
+        <thead class="table-dark">
+            <th>No</th>
+            <th>Nama</th>
+            <th>Alamat</th>
+            <th>Gender</th>
+            <th>Umur</th> 
+            <th></th>
+            
+            
+          </thead>
+          
+          <tbody>
+            {% for l in lp %}
+            <tr>
+              <td>{{loop.index}}</td>
+              <td>{{l.nama}}</td>
+              <td>{{l.alamat}}</td>
+              <td>{{l.gender}}</td>
+              <td>{{l.umur}}</td>
+              <td><a href="/list_pendaftaran/{{l.id}}/delete" class="btn btn-danger">delete</a></td>
+              <td><a href="/delete" class="btn btn-info">update</a></td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+    
+    <script src="{{url_for('static', filename='bootstrap.min.js')}}" rel="stylesheet"></script>
+  </body>
+</html>
