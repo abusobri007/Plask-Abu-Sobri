@@ -49,6 +49,37 @@ def save_peserta():
        db.session.add(p)
        db.session.commit()
        return redirect('/list_pendaftaran')
+
+@app.route("/list_pendaftaran/<id>/edit")
+def edit_peserta(id):
+    obj = Peserta.query.filter_by(id=id).first()
+    return render_template("edit_peserta.html",obj=obj)
+
+@app.route("/list_pendaftaran/<id>/update", methods=['POST'])
+def update_peserta(id):
+    obj = Peserta.query.filter_by(id=id).first()#data from db
+ #data from cline server
+    f_nama = request.form.get("nama")
+    f_alamat = request.form.get("alamat")
+    f_gender = request.form.get("gender")
+    f_umur = request.form.get("umur")
+
+    #data form db whiht data from cline server
+    obj.nama=f_nama
+    obj.alamat=f_alamat
+    obj.gender=f_gender
+    obj.umur=f_umur
+
+    #save perubahan data ke db
+
+    db.session.add(obj)
+    db.session.commit()
+    return redirect('/list_pendaftaran')
+
+
+
+
+    
        
     
 @app.route("/list_pendaftaran/<id>/delete")
