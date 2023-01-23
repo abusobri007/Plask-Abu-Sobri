@@ -13,12 +13,12 @@
             <div class="col"></div>
             <div class="col">
                 <h1 style="text-align:center">Tambah Peserta</h1>
-                <form action="/tambah_peserta/save" method="post">
+                <form action="/tambah_peserta/save" method="post" enctype="multipart/form-data">
                     <div class="form-group" >
                 
 
                         <label for="">Nama</label>
-                        <input type="text" name="nama" id="" class="form-control">
+                        <input type="text" name="nama" id="" class="form-control" value =>
                     </div>
                     <div class="form-group">
                         <label for="">Alamat</label>
@@ -31,6 +31,11 @@
                     <div class="form-group">
                         <label for="">Umur</label>
                         <input type="text" name="umur" id="" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">file</label>
+                        <input type="file" name="Photo" id="" class="form-control">
+
                     </div>
                     <div class="form-group">
                         <a href="/list_pendaftaran" class="btn btn-warning">cancel</a>
